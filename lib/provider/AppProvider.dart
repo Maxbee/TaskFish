@@ -14,10 +14,16 @@ class AppProvider with ChangeNotifier{
     notifyListeners();
   }
 
-  List taskList = [];
+   List taskList = [];
 
   setTaskList(value){
     this.taskList.add(value);
+    notifyListeners();
+  }
+
+  setTaskAll(value){
+   
+    this.taskList = value;
     notifyListeners();
   }
 }

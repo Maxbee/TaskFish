@@ -6,10 +6,12 @@ class Storage{
 
   static Future<void> setString(key,value) async{
        SharedPreferences sp=await SharedPreferences.getInstance();
+       
        sp.setString(key, value);
   }
   static Future<String> getString(key) async{
        SharedPreferences sp=await SharedPreferences.getInstance();
+       print('get---${sp.getString(key)}');
        return sp.getString(key);
   }
   static Future<void> remove(key) async{
@@ -21,7 +23,7 @@ class Storage{
        sp.clear();
   }
   //根据关键字返回decode的map对象
-  static Future<Map> parseFromEncode(String value) async{
+  static Future<List> parseFromEncode(String value) async{
     var target;
     try{
       
@@ -34,5 +36,6 @@ class Storage{
     return target;
   }
 
+  
 
 }

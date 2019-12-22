@@ -28,6 +28,7 @@ class _TagWidgetState extends State<TagWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      splashColor: Colors.transparent,
       child: Container(
         
        width: ScreenAdapter.width(36),

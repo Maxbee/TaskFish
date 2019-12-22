@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../page/TimeLine.dart';
 import '../page/Home.dart';
 import '../page/AddTime.dart';
+import '../page/test.dart';
+import '../page/Complete.dart';
+
 // 配置路由
 final routes = {
     // '/course': (context, {arguments}) => CoursePage(
@@ -10,7 +13,9 @@ final routes = {
     //     )
     // '/home':(context)=> HomePage(),
      '/timeline':(context)=>TimeLine(),
-     '/addtime':(context) => AddTimePage()
+     '/addtime':(context) => AddTimePage(),
+     '/test':(context) => TestPage(),
+     '/complete':(context) => CompletePage(),
 };
 
 var onGenerateRoute=(RouteSettings settings) {

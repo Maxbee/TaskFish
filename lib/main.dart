@@ -22,9 +22,9 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (_) => AppProvider()),
       ],
       child: MaterialApp(
-        // initialRoute: '/timeline',
+        // initialRoute: '/test',
         theme: ThemeData(
-          primaryColor:Colors.deepOrange,
+          primaryColor:Colors.lightGreen,
         ),
         home: HomePage(),
         onGenerateRoute: onGenerateRoute,
