@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                 // color: Colors.white,
               ),
               onPressed: ()  {
-                // Navigator.pushNamed(context, '/test');
+                Navigator.pushNamed(context, '/complete');
               },
             ),
             IconButton(
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, index) {
                       var task = this.temp;
                       // print(index.runtimeType);
-                      print("task${task}");
+                      // print("task${task}");
 
                       return InkWell(
                         // hoverColor: Colors.transparent,
@@ -294,8 +294,9 @@ class _HomePageState extends State<HomePage> {
   _deletTaskFromIndex(int index) async {
     var tasklist = await Storage.parseFromEncode("taskList");
     tasklist.removeAt(index);
-    this._addDoneTask(index);//储存已完成的任务区
+   
     await Storage.setString("taskList", json.encode(tasklist));
+    this._addDoneTask(index);//储存已完成的任务区
     this.intiDo();
   }
   //添加完成的任务
@@ -306,7 +307,10 @@ class _HomePageState extends State<HomePage> {
       done = [];
     }
     var taskSingleItem =  await Storage.parseFromEncode("taskList");
-    done.add(taskSingleItem[index]);
+    print("---xxxxx===${index}==${taskSingleItem}");
+
+    // print("${taskSingleItem[index]}---single===${index}");
+    // done.add(taskSingleItem[index]);
     await Storage.setString("doneTask", done);
   }
 
@@ -358,7 +362,7 @@ class _HomePageState extends State<HomePage> {
             ),
           );
         }).then((value) {
-      print(value);
+      // print(value);
     });
   }
 }
