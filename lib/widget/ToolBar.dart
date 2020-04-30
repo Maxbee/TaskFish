@@ -112,7 +112,7 @@ class ToolBarState extends State<ToolBar> {
       padding: EdgeInsets.only(left: 10, right: 10),
       child: Row(
         children: <Widget>[
-          Text('hh'),
+          Text('我是ToolBar'),
 
           // nextBtn,
           Expanded(
@@ -123,7 +123,7 @@ class ToolBarState extends State<ToolBar> {
               child:Text(''),
             ),
           ),
-          hideKeyBoard
+          hideKeyBoard,
         ],
       ),
     );

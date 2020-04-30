@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'page/Home.dart';
 import 'route/Routes.dart';
 
@@ -28,6 +28,14 @@ class _MyAppState extends State<MyApp> {
         ),
         home: HomePage(),
         onGenerateRoute: onGenerateRoute,
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('zh','CH'),
+          const Locale('en','US'),
+        ],
       ),
     );
   }

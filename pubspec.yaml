@@ -19,6 +19,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_screenutil: ^0.7.0
   provider: ^3.2.0
   # shared_preferences: 0.5.6

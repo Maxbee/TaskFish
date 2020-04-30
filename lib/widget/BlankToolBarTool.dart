@@ -51,12 +51,12 @@ class BlankToolBarModel {
       FocusNode editingNode = findEditingNode();
       if(_currentEditingNode != editingNode){
         _currentEditingNode = editingNode;
-        print('>>>>>>>>+++++++++++');
+        // print('>>>>>>>>+++++++++++');
         if(outSideCallback != null){
           outSideCallback();
         }
       }else{
-        print('>>>>>>>>----------');
+        // print('>>>>>>>>----------');
       }
       
   }

@@ -28,6 +28,8 @@ class AddTimePage extends StatefulWidget {
 class _AddTimePageState extends State<AddTimePage> {
   TextEditingController _textController;
   FocusNode blankNode = FocusNode();
+  // Step1: 响应空白处的焦点的Node
+  BlankToolBarModel blankToolBarModel = BlankToolBarModel();
   var date;
   String text;
   int tag;
@@ -98,16 +100,13 @@ class _AddTimePageState extends State<AddTimePage> {
                     } catch (e) {
                       await Storage.setString("taskList", json.encode([]));
                     }
-                    currentTaskList.add(task);
+                    currentTaskList.add(task);//新增任务
                     List reverseCurrentTask = currentTaskList.reversed.toList();//逆序数据
-                    // Map 
-                    print('${currentTaskList.reversed}xxxxxxxxxxxxx');
                     await Storage.setString(
                         "taskList", json.encode(reverseCurrentTask));
                     //储存数据
 
                     var taskListMap = await Storage.parseFromEncode("taskList");
-                    print(taskListMap);
                   }
                   // Fluttertoast.showToast(
                   //     msg: "添加成功",
@@ -148,7 +147,7 @@ class _AddTimePageState extends State<AddTimePage> {
                       fontSize: ScreenAdapter.setSp(34),
                     ),
                     border: InputBorder.none, //OutlineInputBorder(),
-                    labelText: '做点什么呢？',
+                    // labelText: '做点什么呢？',
                     // filled: true,
                     // fillColor: Color(0xffdddddd),
                   ),
